@@ -172,65 +172,102 @@ export function Navbar({ onOpenSubmit, onOpenExport, onOpenBroadcast }) {
   }, [isNavDrawerOpen]);
 
   return (
-    <header style={{
-      position: 'sticky',
-      top: 0,
-      zIndex: 90,
-      background: 'rgba(11, 16, 32, 0.96)',
-      backdropFilter: 'blur(12px)',
-      borderBottom: '1px solid var(--df-teal)'
-    }}>
-      {/* Sub-HUD Telemetry Line */}
-      <div style={{
-        background: 'var(--df-surface)',
-        borderBottom: '1px solid var(--df-border)',
-        padding: '3px 16px',
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        gap: '8px',
-        fontFamily: 'var(--font-vt)',
-        fontSize: '13px',
-        letterSpacing: '0.12em',
-        color: 'var(--df-text-dim)',
-        textTransform: 'uppercase'
-      }}>
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-          <span>[ UNIT / DF-01 ]</span>
-          <span style={{ color: 'var(--df-text-faint)' }}>51.5310°N 0.0500°E</span>
-          <span style={{ color: 'var(--df-text-faint)' }}>REV 2.6</span>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'var(--df-teal)' }}>
-            <span className="df-live-dot" /> SYS READY · 72H DUAL-ENGINE
-          </span>
-        </div>
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-          {announcements.length > 0 && (
-            <span style={{ color: 'var(--df-pink)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              <Megaphone size={11} /> {announcements[0]?.title.slice(0, 38)}...
+    <>
+      <header 
+        className="df-main-header"
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 1000,
+          background: 'rgba(11, 16, 32, 0.96)',
+          backdropFilter: 'blur(12px)',
+          borderBottom: '1px solid var(--df-teal)'
+        }}
+      >
+        {/* Sub-HUD Telemetry Line */}
+        <div 
+          className="df-telemetry-hud"
+          style={{
+            background: 'var(--df-surface)',
+            borderBottom: '1px solid var(--df-border)',
+            padding: '3px 16px',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            gap: '8px',
+            fontFamily: 'var(--font-vt)',
+            fontSize: '13px',
+            letterSpacing: '0.12em',
+            color: 'var(--df-text-dim)',
+            textTransform: 'uppercase',
+            position: 'relative',
+            zIndex: 1002
+          }}
+        >
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span>[ UNIT / DF-01 ]</span>
+            <span style={{ color: 'var(--df-text-faint)' }}>51.5310°N 0.0500°E</span>
+            <span style={{ color: 'var(--df-text-faint)' }}>REV 2.6</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'var(--df-teal)' }}>
+              <span className="df-live-dot" /> SYS READY · 72H DUAL-ENGINE
             </span>
-          )}
-          <span style={{ color: 'var(--df-teal)' }}>DOGFOOD PLATFORM</span>
+          </div>
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            {announcements.length > 0 && (
+              <span style={{ color: 'var(--df-pink)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                <Megaphone size={11} /> {announcements[0]?.title.slice(0, 38)}...
+              </span>
+            )}
+            <span style={{ color: 'var(--df-teal)' }}>DOGFOOD PLATFORM</span>
+          </div>
         </div>
-      </div>
 
-      {/* Main Navbar Bar */}
-      <div style={{
-        maxWidth: '1440px',
-        margin: '0 auto',
-        padding: '0 16px',
-        height: '56px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: '14px'
-      }}>
-        {/* Left Side: Brand Logo + Interactive Hamburger Navigation Button */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexShrink: 0 }}>
-          {/* Brand */}
+        {/* Main Navbar Bar */}
+        <div 
+          className="df-navbar-bar"
+          style={{
+            maxWidth: '1440px',
+            margin: '0 auto',
+            padding: '0 16px',
+            height: '56px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px',
+            position: 'relative',
+            zIndex: 1002
+          }}
+        >
+          {/* Left Corner: Interactive Hamburger Navigation Button + Brand Logo */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0, flexShrink: 0 }}>
+            {/* Interactive Hamburger Navigation Button - At Left Corner */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsNavDrawerOpen(prev => !prev);
+              }}
+              className={`df-hamburger-trigger ${isNavDrawerOpen ? 'is-active' : ''}`}
+              aria-label="Toggle Navigation Directory"
+              title="Open Platform Navigation Matrix (Press 'M')"
+            >
+              {isNavDrawerOpen ? <X size={17} color="var(--df-pink)" /> : <Menu size={17} color="var(--df-teal)" />}
+              <span className="df-hamburger-text">
+                [ <strong>{isNavDrawerOpen ? 'CLOSE' : 'MENU'}</strong> ]
+              </span>
+              <span className="df-hamburger-active-badge df-hide-tablet">
+                <span className="df-live-dot" />
+                {currentActiveItem?.label}
+              </span>
+            </button>
+
+          <span className="df-nav-divider" style={{ width: '1px', height: '22px', background: 'var(--df-border)', display: 'inline-block', flexShrink: 0 }} />
+
+          {/* Brand Logo */}
           <div 
             onClick={() => handleNavClick('overview')}
-            style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', userSelect: 'none' }}
+            style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', userSelect: 'none', flexShrink: 0 }}
           >
             <div style={{
               fontFamily: 'var(--font-display)',
@@ -239,40 +276,23 @@ export function Navbar({ onOpenSubmit, onOpenExport, onOpenBroadcast }) {
               color: 'var(--df-text)',
               display: 'flex',
               alignItems: 'center',
-              gap: '3px'
+              gap: '3px',
+              whiteSpace: 'nowrap'
             }}>
               DOGFOOD<span style={{ color: 'var(--df-pink)', fontWeight: 400, fontSize: '0.85rem' }}>®</span>
             </div>
-            <span style={{ width: '1px', height: '16px', background: 'var(--df-border)' }} />
-            <span style={{
+            <span className="df-hide-mobile" style={{ width: '1px', height: '16px', background: 'var(--df-border)' }} />
+            <span className="df-hide-mobile" style={{
               fontFamily: 'var(--font-mono)',
               fontSize: '0.68rem',
               letterSpacing: '0.14em',
               color: 'var(--df-text-dim)',
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              whiteSpace: 'nowrap'
             }}>
               SELF-HOSTABLE
             </span>
           </div>
-
-          <span style={{ width: '1px', height: '24px', background: 'var(--df-border)', display: 'inline-block' }} />
-
-          {/* Interactive Hamburger Navigation Button */}
-          <button
-            onClick={() => setIsNavDrawerOpen(!isNavDrawerOpen)}
-            className="df-hamburger-trigger"
-            aria-label="Toggle Navigation Directory"
-            title="Open Platform Navigation Matrix (Press 'M')"
-          >
-            {isNavDrawerOpen ? <X size={17} color="var(--df-pink)" /> : <Menu size={17} color="var(--df-teal)" />}
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-              [ <strong>{isNavDrawerOpen ? 'CLOSE' : 'MENU'}</strong> ]
-            </span>
-            <span className="df-hamburger-active-badge">
-              <span className="df-live-dot" />
-              {currentActiveItem?.label}
-            </span>
-          </button>
         </div>
 
         {/* Right Actions & Role Switcher */}
@@ -367,13 +387,14 @@ export function Navbar({ onOpenSubmit, onOpenExport, onOpenBroadcast }) {
           </div>
         </div>
       </div>
+    </header>
 
-      {/* Interactive Navigation Matrix Drawer Overlay */}
-      {isNavDrawerOpen && (
-        <div 
-          className="df-nav-overlay"
-          onClick={() => setIsNavDrawerOpen(false)}
-        >
+    {/* Interactive Navigation Matrix Drawer Overlay */}
+    {isNavDrawerOpen && (
+      <div 
+        className="df-nav-overlay"
+        onClick={() => setIsNavDrawerOpen(false)}
+      >
           <div 
             className="df-nav-drawer"
             onClick={(e) => e.stopPropagation()}
@@ -382,44 +403,37 @@ export function Navbar({ onOpenSubmit, onOpenExport, onOpenBroadcast }) {
             <div style={{
               background: 'var(--df-surface)',
               borderBottom: '1px solid var(--df-border)',
-              padding: '14px 24px',
+              padding: '12px 18px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              gap: '12px',
-              flexWrap: 'wrap'
+              gap: '10px',
+              flexShrink: 0
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Compass size={18} color="var(--df-teal)" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Compass size={16} color="var(--df-teal)" />
                 <span style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.85rem',
+                  fontSize: '0.8rem',
                   fontWeight: 700,
-                  letterSpacing: '0.12em',
+                  letterSpacing: '0.1em',
                   color: '#fff',
                   textTransform: 'uppercase'
                 }}>
-                  [ SYSTEM NAVIGATION MATRIX ]
-                </span>
-                <span style={{
-                  fontSize: '0.72rem',
-                  color: 'var(--df-text-dim)',
-                  fontFamily: 'var(--font-mono)'
-                }}>
-                  // Press [M] or [ESC] to toggle
+                  NAVIGATION MATRIX
                 </span>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.72rem',
+                  fontSize: '0.68rem',
                   color: 'var(--df-teal)',
                   background: 'var(--df-teal-dim)',
-                  padding: '3px 8px',
+                  padding: '2px 6px',
                   border: '1px solid var(--df-teal)'
                 }}>
-                  CURRENT ROLE: {currentRole}
+                  {currentRole}
                 </span>
 
                 <button
@@ -429,16 +443,17 @@ export function Navbar({ onOpenSubmit, onOpenExport, onOpenBroadcast }) {
                     border: '1px solid var(--df-border)',
                     color: 'var(--df-pink)',
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '0.75rem',
+                    fontSize: '0.72rem',
                     fontWeight: 700,
-                    padding: '4px 10px',
+                    padding: '3px 8px',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '4px'
                   }}
+                  title="Close Navigation (ESC)"
                 >
-                  <X size={14} /> [ CLOSE ]
+                  <X size={13} /> [ CLOSE ]
                 </button>
               </div>
             </div>
@@ -519,23 +534,22 @@ export function Navbar({ onOpenSubmit, onOpenExport, onOpenBroadcast }) {
             <div style={{
               background: 'var(--df-surface)',
               borderTop: '1px solid var(--df-border)',
-              padding: '14px 24px',
+              padding: '12px 18px',
               display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: '12px',
-              flexWrap: 'wrap'
+              flexDirection: 'column',
+              gap: '10px',
+              flexShrink: 0
             }}>
-              <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
                 <button
                   className="btn btn-primary btn-sm"
                   onClick={() => {
                     setIsNavDrawerOpen(false);
                     onOpenSubmit();
                   }}
-                  style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.74rem', padding: '5px 10px' }}
                 >
-                  <PlusCircle size={14} /> [ Submit Project ]
+                  <PlusCircle size={13} /> Submit Project
                 </button>
 
                 {currentRole === 'ORGANIZER' && (
@@ -545,9 +559,9 @@ export function Navbar({ onOpenSubmit, onOpenExport, onOpenBroadcast }) {
                       setIsNavDrawerOpen(false);
                       onOpenBroadcast();
                     }}
-                    style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+                    style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.74rem', padding: '5px 10px' }}
                   >
-                    <Megaphone size={14} /> [ Broadcast Alert ]
+                    <Megaphone size={13} /> Broadcast Alert
                   </button>
                 )}
 
@@ -557,19 +571,20 @@ export function Navbar({ onOpenSubmit, onOpenExport, onOpenBroadcast }) {
                     setIsNavDrawerOpen(false);
                     onOpenExport();
                   }}
-                  style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+                  style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.74rem', padding: '5px 10px' }}
                 >
-                  <Download size={14} /> [ Export Data &amp; Scorecards ]
+                  <Download size={13} /> Export Data
                 </button>
               </div>
 
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--df-text-dim)' }}>
-                Dogfood 2026 // 72-Hour Dual-Engine Platform
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--df-text-dim)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span>Dogfood 2026 // Platform</span>
+                <span>ESC to close</span>
               </div>
             </div>
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }

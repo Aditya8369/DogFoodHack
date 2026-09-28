@@ -494,6 +494,14 @@ body.df-body {
     display: none !important;
   }
   
+  .df-telemetry-hud {
+    display: none !important;
+  }
+  
+  .df-hamburger-active-badge {
+    display: none !important;
+  }
+  
   .modal-content {
     max-height: 95vh;
     padding: 0;
@@ -537,16 +545,28 @@ body.df-body {
   .glass-panel {
     padding: 16px !important;
   }
+
+  .df-hamburger-text {
+    display: none !important;
+  }
+
+  .df-hamburger-trigger {
+    padding: 6px 8px !important;
+  }
 }
 
 /* ==========================================================================
    Interactive Hamburger Button & Navigation Matrix Drawer
    ========================================================================== */
 
+:root {
+  --df-header-height: 85px;
+}
+
 .df-hamburger-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   background: var(--df-surface);
   border: 1px solid var(--df-teal);
   color: var(--df-text);
@@ -559,6 +579,8 @@ body.df-body {
   transition: all 0.2s ease;
   user-select: none;
   box-shadow: 0 0 12px -3px var(--df-teal-glow);
+  flex-shrink: 0;
+  border-radius: 2px;
 }
 
 .df-hamburger-trigger:hover {
@@ -571,6 +593,24 @@ body.df-body {
 
 .df-hamburger-trigger:active {
   transform: translateY(0);
+}
+
+.df-hamburger-trigger.is-active {
+  background: rgba(255, 61, 110, 0.15);
+  border-color: var(--df-pink);
+  color: #fff;
+  box-shadow: 0 0 18px -2px var(--df-pink-glow);
+}
+
+.df-hamburger-trigger.is-active:hover {
+  background: rgba(255, 61, 110, 0.25);
+  border-color: var(--df-pink);
+}
+
+.df-hamburger-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .df-hamburger-active-badge {
@@ -588,67 +628,71 @@ body.df-body {
 
 .df-nav-overlay {
   position: fixed;
-  top: 0;
+  top: var(--df-header-height);
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(7, 10, 18, 0.85);
-  backdrop-filter: blur(14px);
+  background: rgba(7, 10, 18, 0.72);
+  backdrop-filter: blur(8px);
   z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px 16px 20px 16px;
-  overflow-y: auto;
+  display: block;
+  padding: 0;
+  overflow: hidden;
   animation: dfFadeIn 0.2s ease-out;
+}
+
+@media (max-width: 768px) {
+  .df-nav-overlay {
+    top: 56px;
+  }
 }
 
 .df-nav-drawer {
   background: #0B1020;
-  border: 1px solid var(--df-teal);
-  box-shadow: 0 0 35px -8px var(--df-teal-glow), 0 20px 50px rgba(0,0,0,0.8);
-  width: 100%;
-  max-width: 1100px;
-  position: relative;
+  border-right: 2px solid var(--df-teal);
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  box-shadow: 15px 0 45px -5px rgba(0, 229, 208, 0.25), 30px 0 80px rgba(0, 0, 0, 0.95);
+  width: 440px;
+  max-width: 90vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  animation: dfSlideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: dfSlideInLeft 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes dfFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes dfSlideDown {
+@keyframes dfSlideInLeft {
   from {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.98);
+    transform: translateX(-100%);
+    opacity: 0.6;
   }
   to {
+    transform: translateX(0);
     opacity: 1;
-    transform: translateY(0) scale(1);
   }
 }
 
 .df-nav-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 24px;
-}
-
-@media (max-width: 900px) {
-  .df-nav-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
 }
 
 .df-nav-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
-  padding: 14px 16px;
+  padding: 10px 14px;
   background: var(--df-surface);
   border: 1px solid var(--df-border);
   color: var(--df-text);
