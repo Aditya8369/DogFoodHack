@@ -1,11 +1,12 @@
 # ⚡ Dogfood 2026: Modern Self-Hostable Hackathon Platform
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Docker Ready](https://img.shields.io/badge/Docker-Multi--Stage%20Build-blue?logo=docker)](https://www.docker.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](package.json)
+[![Acceptance Status](https://img.shields.io/badge/Acceptance-PASSED%20(22%2F22)-brightgreen)](acceptance-report.txt)
+[![Docker Ready](https://img.shields.io/badge/Docker-Multi--Stage%20Build-blue?logo=docker)](Dockerfile)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B%20%7C%2020%2B-green?logo=node.js)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/Frontend-React%2018%20%2B%20Vite-61dafb?logo=react)](https://react.dev/)
-[![CSS](https://img.shields.io/badge/Styling-Obsidian%20Cyber%20Vanilla%20CSS-ff007f)](https://www.w3.org/Style/CSS/)
-[![Zero External DB](https://img.shields.io/badge/Database-Zero--Config%20JSON%2FSQLite-purple)](https://github.com/)
+[![CSS](https://img.shields.io/badge/Styling-Obsidian%20Cyber%20Vanilla%20CSS-ff007f)](client/src/index.css)
+[![Zero External DB](https://img.shields.io/badge/Database-Zero--Config%20JSON-purple)](data/db.json)
 
 > **"The Hackathon Built to Hack Hackathons"** — An open-source, fully self-hostable hackathon submission, judging, and live operations platform engineered for high-stakes 72-hour engineering challenges.
 
@@ -102,7 +103,7 @@ The platform is organized into 11 purpose-built views accessible from the top na
 ### 5. Role Switcher (Participant, Judge, Organizer)
 Switch roles instantly with a single click in the top navigation bar:
 - **Participant Mode**: Submit projects, edit profiles, upvote submissions, post mentor help tickets, and find teammates.
-- **Judge Mode**: Evaluate projects across multiple pre-configured judge profiles (e.g., Alex Mercer, Dr. Aris Thorne, Maya Lin, Chen Wei), launch pairwise comparisons, and track personal evaluation completion.
+- **Judge Mode**: Evaluate projects across multiple pre-configured judge profiles (e.g., Dr. Sarah Chen, Alex Rivera, Priya Sharma, Kaito Tanaka), launch pairwise comparisons, and track personal evaluation completion.
 - **Organizer Mode**: Broadcast urgent notices, force-change hackathon phases, review real-time audit logs, reseed sample data, and export leaderboard reports.
 
 ### 6. High-Polish Obsidian & Neon Cyber UX
@@ -190,7 +191,7 @@ dogfood-hackathon/
 │   └── api.test.js             # End-to-end REST & healthcheck integration tests
 │
 └── data/                       # Persistent Data Storage (Created on first run)
-    └── dogfood_db.json         # Primary database file
+    └── db.json                 # Primary database file (atomic JSON write-through)
 ```
 
 ---
@@ -214,10 +215,10 @@ This method builds both the frontend and backend into an optimized Alpine contai
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/dogfood-hackathon.git
-cd dogfood-hackathon
+git clone https://github.com/Aditya8369/Rushabh-Mahajan.git
+cd Rushabh-Mahajan
 
-# 2. Start the platform in the background
+# 2. Start the platform in the background (or npm run docker:run)
 docker compose up -d --build
 ```
 
@@ -238,19 +239,19 @@ docker compose up -d --build
 If you prefer using pure Docker commands without compose:
 
 ```bash
-# 1. Build the production Docker image
+# 1. Build the production Docker image (or npm run docker:build)
 docker build -t dogfood-hackathon .
 
 # 2. Run the container with persistent storage
 docker run -d \
   -p 5000:5000 \
-  -v dogfood_data:/app/data \
-  --name dogfood-2026 \
+  -v dogfood_hackathon_data:/app/data \
+  --name dogfood-2026-hackathon \
   dogfood-hackathon
 ```
 
 - Open **[http://localhost:5000](http://localhost:5000)** in your browser.
-- To inspect health status: `docker inspect --format='{{json .State.Health}}' dogfood-2026`
+- To inspect health status: `docker inspect --format='{{json .State.Health}}' dogfood-2026-hackathon`
 
 ---
 
@@ -344,7 +345,7 @@ Once your application is running, follow these steps to experience the complete 
 
 ### 2. Evaluate as a Judge
 1. In the top navbar, click the role dropdown and select **"Judge"**.
-2. Choose one of the 4 judge personas (e.g. *Dr. Aris Thorne* or *Alex Mercer*).
+2. Choose one of the 4 judge personas (e.g. *Dr. Sarah Chen* or *Alex Rivera*).
 3. Navigate to the **Judging** tab.
 4. Click **"Score Rubric"** on any project to open the 5-criterion weighted evaluation modal. Adjust the sliders, add written feedback, and submit.
 5. Click **"Launch Pairwise Arena"** to duel two projects head-to-head. Pick the winner to recalculate their Bradley-Terry Elo ratings ($K=32$) instantly.
@@ -369,7 +370,7 @@ The platform uses a `.env` file in the root directory for configuration. All set
 |---|---|---|---|
 | `PORT` | Number | `5000` | Port where the Express API and production static server listens. |
 | `NODE_ENV` | String | `development` | Environment mode (`development` or `production`). |
-| `DATA_DIR` | String | `./data` | File system path where `dogfood_db.json` is stored and persisted. |
+| `DATA_DIR` | String | `./data` | File system path where `db.json` is stored and persisted. |
 
 ---
 
@@ -458,7 +459,7 @@ All API routes return JSON and are prefixed with `/api`.
     ```json
     {
       "judgeId": "judge-1",
-      "judgeName": "Dr. Aris Thorne",
+      "judgeName": "Dr. Sarah Chen",
       "submissionId": "sub-1",
       "scores": [
         { "criterionId": "crit-innov", "score": 9 },
