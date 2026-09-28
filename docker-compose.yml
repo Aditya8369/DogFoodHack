@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  dogfood-platform:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dogfood-2026-hackathon
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - NODE_ENV=production
+    volumes:
+      # Persistent database and uploaded assets storage
+      - dogfood_data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5000/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  dogfood_data:
+    name: dogfood_hackathon_data

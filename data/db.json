@@ -1,0 +1,970 @@
+{
+  "config": {
+    "id": "dogfood-2026",
+    "name": "Dogfood 2026",
+    "tagline": "The 72-Hour Challenge: Build the Ultimate Hackathon Engine",
+    "description": "A 72-hour premier global hackathon inviting top engineers and product designers to build a modern, open-source, self-hostable hackathon submission & judging platform.",
+    "status": "JUDGING",
+    "totalHours": 72,
+    "startTime": "2026-09-24T20:03:21.094Z",
+    "endTime": "2026-09-27T20:03:21.096Z",
+    "currentPhaseEnd": "2026-09-27T20:03:21.096Z",
+    "prizesTotal": "$45,000 USD",
+    "discordUrl": "https://discord.gg/dogfood2026",
+    "githubOrgUrl": "https://github.com/dogfood-builders",
+    "tracks": [
+      {
+        "id": "track-core",
+        "name": "Grand Prix: Core Platform & Self-Hosting",
+        "description": "Best end-to-end self-hostable platform with Docker support, multi-track judging & audit trails.",
+        "prize": "$20,000",
+        "sponsor": "KernelCorp Systems",
+        "icon": "Cpu"
+      },
+      {
+        "id": "track-ai",
+        "name": "AI & Automated Evaluation",
+        "description": "Smart code intelligence, automated rubric suggestions, and anti-plagiarism heuristics.",
+        "prize": "$10,000",
+        "sponsor": "Ollama Open Labs",
+        "icon": "Sparkles"
+      },
+      {
+        "id": "track-ux",
+        "name": "Developer Experience & Realtime Showcase",
+        "description": "Smoothest submission studio, live pairwise showdowns, and interactive leaderboards.",
+        "prize": "$8,000",
+        "sponsor": "FigmaLab Design",
+        "icon": "Layers"
+      },
+      {
+        "id": "track-sponsor-cloud",
+        "name": "Cloud Native & Edge Deployability",
+        "description": "Zero-config Docker compose setup, resilience, multi-node scaling, and instant restore.",
+        "prize": "$7,000",
+        "sponsor": "CloudNative Foundation",
+        "icon": "Box"
+      }
+    ],
+    "criteria": [
+      {
+        "id": "crit-innov",
+        "name": "Innovation & Originality",
+        "weight": 25,
+        "description": "Uniqueness of solution, novel judging flows, and creative architecture."
+      },
+      {
+        "id": "crit-tech",
+        "name": "Technical Execution & Architecture",
+        "weight": 30,
+        "description": "Code quality, Dockerization, algorithm design, stability and performance."
+      },
+      {
+        "id": "crit-ux",
+        "name": "UI/UX & Developer Flow",
+        "weight": 20,
+        "description": "Intuitive workflows, responsiveness, animations, accessibility and visual polish."
+      },
+      {
+        "id": "crit-practical",
+        "name": "Self-Hostability & Completeness",
+        "weight": 15,
+        "description": "Ease of one-command self-hosting, data persistence, and zero vendor lock-in."
+      },
+      {
+        "id": "crit-presentation",
+        "name": "Documentation & Demo Polish",
+        "weight": 10,
+        "description": "Comprehensive README, API docs, video walkthrough, and live working demo."
+      }
+    ],
+    "organizers": [
+      {
+        "id": "org-1",
+        "name": "Elena Rostova",
+        "email": "elena@dogfood2026.dev",
+        "role": "ORGANIZER",
+        "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80"
+      },
+      {
+        "id": "org-2",
+        "name": "Marcus Vance",
+        "email": "marcus@dogfood2026.dev",
+        "role": "ORGANIZER",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80"
+      }
+    ],
+    "judges": [
+      {
+        "id": "judge-1",
+        "name": "Dr. Sarah Chen",
+        "title": "Principal Systems Architect @ KernelCorp",
+        "email": "sarah@judge.dogfood.dev",
+        "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+        "specialties": [
+          "Distributed Systems",
+          "Docker",
+          "Judging Algorithms"
+        ]
+      },
+      {
+        "id": "judge-2",
+        "name": "Alex Rivera",
+        "title": "VP Product Design @ FigmaLab",
+        "email": "alex@judge.dogfood.dev",
+        "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+        "specialties": [
+          "UX/UI Polish",
+          "Frontend Performance",
+          "Design Systems"
+        ]
+      },
+      {
+        "id": "judge-3",
+        "name": "Priya Sharma",
+        "title": "Open Source Lead @ CloudNative Org",
+        "email": "priya@judge.dogfood.dev",
+        "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+        "specialties": [
+          "Self-Hosting",
+          "APIs",
+          "DevOps"
+        ]
+      },
+      {
+        "id": "judge-4",
+        "name": "Kaito Tanaka",
+        "title": "Senior Security Engineer @ ZeroSec",
+        "email": "kaito@judge.dogfood.dev",
+        "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80",
+        "specialties": [
+          "Integrity Checks",
+          "Z-Score Math",
+          "Scalability"
+        ]
+      }
+    ]
+  },
+  "teams": [
+    {
+      "id": "team-1",
+      "name": "HyperSync Dynamics",
+      "track": "track-core",
+      "members": [
+        {
+          "name": "Devon Reed",
+          "role": "Fullstack Lead",
+          "email": "devon@hypersync.io"
+        },
+        {
+          "name": "Maya Lin",
+          "role": "Frontend & UI Designer",
+          "email": "maya@hypersync.io"
+        },
+        {
+          "name": "Liam O'Connor",
+          "role": "DevOps & Systems",
+          "email": "liam@hypersync.io"
+        }
+      ],
+      "lookingForMembers": false,
+      "openRoles": []
+    },
+    {
+      "id": "team-2",
+      "name": "Aegis AI Labs",
+      "track": "track-ai",
+      "members": [
+        {
+          "name": "Sophia Zhang",
+          "role": "ML Engineer",
+          "email": "sophia@aegis.dev"
+        },
+        {
+          "name": "Kenji Sato",
+          "role": "Backend Architect",
+          "email": "kenji@aegis.dev"
+        }
+      ],
+      "lookingForMembers": true,
+      "openRoles": [
+        "UI/UX Specialist",
+        "Technical Writer"
+      ]
+    },
+    {
+      "id": "team-3",
+      "name": "OmniMesh Collective",
+      "track": "track-sponsor-cloud",
+      "members": [
+        {
+          "name": "Zara Thorne",
+          "role": "Distributed Systems",
+          "email": "zara@omnimesh.org"
+        },
+        {
+          "name": "Tariq Mansoor",
+          "role": "Docker Specialist",
+          "email": "tariq@omnimesh.org"
+        },
+        {
+          "name": "Chloe Dupont",
+          "role": "Frontend Dev",
+          "email": "chloe@omnimesh.org"
+        }
+      ],
+      "lookingForMembers": false,
+      "openRoles": []
+    },
+    {
+      "id": "team-4",
+      "name": "NeuroFlow Studio",
+      "track": "track-ux",
+      "members": [
+        {
+          "name": "Lucas Silva",
+          "role": "Design Technologist",
+          "email": "lucas@neuroflow.app"
+        },
+        {
+          "name": "Emma Watson",
+          "role": "Creative Developer",
+          "email": "emma@neuroflow.app"
+        }
+      ],
+      "lookingForMembers": true,
+      "openRoles": [
+        "Backend Engineer (Node/Go)"
+      ]
+    },
+    {
+      "id": "team-5",
+      "name": "ZeroTrace Protocol",
+      "track": "track-core",
+      "members": [
+        {
+          "name": "Arthur Pendelton",
+          "role": "Rust & Docker Dev",
+          "email": "arthur@zerotrace.dev"
+        },
+        {
+          "name": "Gita Patel",
+          "role": "Fullstack Engineer",
+          "email": "gita@zerotrace.dev"
+        }
+      ],
+      "lookingForMembers": false,
+      "openRoles": []
+    },
+    {
+      "id": "team-6",
+      "name": "PromptMorphers",
+      "track": "track-ai",
+      "members": [
+        {
+          "name": "Noah Kim",
+          "role": "AI Researcher",
+          "email": "noah@morph.ai"
+        },
+        {
+          "name": "Isabella Rossi",
+          "role": "Product Designer",
+          "email": "isabella@morph.ai"
+        }
+      ],
+      "lookingForMembers": false,
+      "openRoles": []
+    }
+  ],
+  "submissions": [
+    {
+      "id": "sub-1",
+      "teamId": "team-1",
+      "teamName": "HyperSync Dynamics",
+      "title": "HyperSync: Real-Time Pairwise Hackathon Matrix",
+      "tagline": "Autonomous scoring engine with Glicko-2 pairwise duels and zero-config self-hosting.",
+      "description": "## The Problem\nTraditional hackathon judging suffers from judge fatigue, uneven calibration between strict and generous reviewers, and tedious manual spreadsheets.\n\n## Our Solution\nHyperSync transforms judging into an ultra-fast, scientifically calibrated experience:\n- **Pairwise Head-to-Head Duels**: Judges quickly pick between two randomized projects, driving robust Glicko-2 rating convergence in 50% less time.\n- **Z-Score Normalization Engine**: Automatically removes individual judge skew.\n- **Docker-First Architecture**: Runs in 15 seconds with `docker compose up -d`.\n- **Live SSE Event Stream**: Real-time updates without polling.",
+      "track": "track-core",
+      "techStack": [
+        "React 18",
+        "Node.js",
+        "Docker",
+        "SQLite",
+        "SSE Streams",
+        "Tailwind-Free CSS"
+      ],
+      "repoUrl": "https://github.com/dogfood-builders/hypersync-matrix",
+      "demoUrl": "https://hypersync.dogfood2026.dev",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "logoUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&auto=format&fit=crop&q=80",
+      "coverUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
+      "status": "SUBMITTED",
+      "submittedAt": "2026-09-26T23:03:21.096Z",
+      "pairwiseScore": 1380,
+      "upvotes": 42
+    },
+    {
+      "id": "sub-2",
+      "teamId": "team-2",
+      "teamName": "Aegis AI Labs",
+      "title": "Aegis: Intelligent Judge Assistant & Anti-Plagiarism Sentry",
+      "tagline": "AI-assisted rubric scoring suggestions with deep AST code similarity detection.",
+      "description": "## What it Does\nAegis audits code commits across public hackathon repos, analyzes submission narratives with LLM rubric alignment, and synthesizes balanced judge feedback briefs.\n\n## Key Features\n- **Git AST Differential Analyzer**: Flags unoriginal or pre-existing code with precision.\n- **Smart Rubric Assistant**: Suggests score ranges based on functional criteria.\n- **Self-Hostable Local Models**: Compatible with Ollama & local Docker models.",
+      "track": "track-ai",
+      "techStack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "Docker",
+        "Ollama LLM",
+        "TreeSitter"
+      ],
+      "repoUrl": "https://github.com/dogfood-builders/aegis-sentry",
+      "demoUrl": "https://aegis.dogfood2026.dev",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "logoUrl": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&auto=format&fit=crop&q=80",
+      "coverUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
+      "status": "SUBMITTED",
+      "submittedAt": "2026-09-27T02:03:21.097Z",
+      "pairwiseScore": 1310,
+      "upvotes": 38
+    },
+    {
+      "id": "sub-3",
+      "teamId": "team-4",
+      "teamName": "NeuroFlow Studio",
+      "title": "NeuroFlow: Fluid Cyberpunk Submission Studio & Live Expo",
+      "tagline": "Ultra-high polish participant submission studio with real-time video preview and Expo booth mode.",
+      "description": "## Experience Reimagined\nHackathons are about celebration and excitement. NeuroFlow brings a video-game tier UI to hackathon submissions with sound effects, dynamic markdown editor, and virtual showcase booths.\n\n## Highlights\n- **Interactive Expo Booths**: Participants customize their live project billboard.\n- **Sub-100ms Markdown Engine**: Instant syntax highlighting and media embeds.\n- **Accessibility First**: Full keyboard navigation & screen-reader compatibility.",
+      "track": "track-ux",
+      "techStack": [
+        "React 18",
+        "Canvas API",
+        "Web Audio",
+        "Vite",
+        "Docker",
+        "CSS Grid"
+      ],
+      "repoUrl": "https://github.com/dogfood-builders/neuroflow-studio",
+      "demoUrl": "https://neuroflow.dogfood2026.dev",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "logoUrl": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&auto=format&fit=crop&q=80",
+      "coverUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80",
+      "status": "SUBMITTED",
+      "submittedAt": "2026-09-27T05:03:21.097Z",
+      "pairwiseScore": 1290,
+      "upvotes": 56
+    },
+    {
+      "id": "sub-4",
+      "teamId": "team-3",
+      "teamName": "OmniMesh Collective",
+      "title": "OmniMesh: Zero-Dependency P2P Hackathon Node",
+      "tagline": "Decentralized hackathon node running anywhere with multi-arch Docker and SQLite WAL replication.",
+      "description": "## Resilient Self-Hosting\nRun your hackathon without AWS or cloud dependency. OmniMesh provides end-to-end encrypted peer syncing for multi-room offline hackathons.\n\n## Features\n- Single binary + multi-stage Docker build under 35MB.\n- Automatic SQLite WAL backup and CSV export.\n- Offline judge mode with background sync upon reconnect.",
+      "track": "track-sponsor-cloud",
+      "techStack": [
+        "Go",
+        "SQLite",
+        "Docker Multi-stage",
+        "Alpine",
+        "WebSockets"
+      ],
+      "repoUrl": "https://github.com/dogfood-builders/omnimesh-node",
+      "demoUrl": "https://omnimesh.dogfood2026.dev",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "logoUrl": "https://images.unsplash.com/photo-1544256718-3bcf237f3974?w=400&auto=format&fit=crop&q=80",
+      "coverUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+      "status": "SUBMITTED",
+      "submittedAt": "2026-09-27T08:03:21.097Z",
+      "pairwiseScore": 1260,
+      "upvotes": 29
+    },
+    {
+      "id": "sub-5",
+      "teamId": "team-5",
+      "teamName": "ZeroTrace Protocol",
+      "title": "ZeroTrace: Anonymous Cryptographic Judging Ledger",
+      "tagline": "Double-blind judging with homomorphic score aggregation preventing judge collusion.",
+      "description": "## Unbiased & Cryptographically Auditable\nZeroTrace guarantees complete anonymity for both submitters and judges until the embargo is lifted.\n- **Double-Blind Submissions**: Identifiers stripped automatically during review.\n- **Commit-Reveal Balloting**: Judges submit cryptographic hashes before final tally.\n- **Instant Docker deployment** with zero external dependencies.",
+      "track": "track-core",
+      "techStack": [
+        "Node.js",
+        "WebCrypto",
+        "React",
+        "Docker",
+        "PostgreSQL Compatible"
+      ],
+      "repoUrl": "https://github.com/dogfood-builders/zerotrace-ledger",
+      "demoUrl": "https://zerotrace.dogfood2026.dev",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "logoUrl": "https://images.unsplash.com/photo-1563089145-599997674d42?w=400&auto=format&fit=crop&q=80",
+      "coverUrl": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=80",
+      "status": "SUBMITTED",
+      "submittedAt": "2026-09-27T09:03:21.097Z",
+      "pairwiseScore": 1220,
+      "upvotes": 31
+    },
+    {
+      "id": "sub-6",
+      "teamId": "team-6",
+      "teamName": "PromptMorphers",
+      "title": "PromptMorph: Real-time Audio-Visual Hackathon Showcase",
+      "tagline": "Turns project repos and slides into interactive 3D video pitches for instant judge comprehension.",
+      "description": "## Accelerate Judge Comprehension\nJudges are swamped with dozens of projects. PromptMorph parses code repos and creates an interactive 90-second dynamic synthesis with architecture diagrams.\n\n- **Auto-generated Architecture Charts**: Extracted directly from docker-compose and package manifests.\n- **Interactive Pitch Mode**: Audio narration + live code snippets.",
+      "track": "track-ai",
+      "techStack": [
+        "Next.js",
+        "Three.js",
+        "Docker",
+        "Node.js",
+        "FFmpeg"
+      ],
+      "repoUrl": "https://github.com/dogfood-builders/prompt-morph",
+      "demoUrl": "https://promptmorph.dogfood2026.dev",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "logoUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&auto=format&fit=crop&q=80",
+      "coverUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop&q=80",
+      "status": "SUBMITTED",
+      "submittedAt": "2026-09-27T11:03:21.097Z",
+      "pairwiseScore": 1190,
+      "upvotes": 24
+    }
+  ],
+  "evaluations": [
+    {
+      "id": "eval-1-1",
+      "judgeId": "judge-1",
+      "judgeName": "Dr. Sarah Chen",
+      "submissionId": "sub-1",
+      "scores": [
+        {
+          "criterionId": "crit-innov",
+          "score": 95
+        },
+        {
+          "criterionId": "crit-tech",
+          "score": 96
+        },
+        {
+          "criterionId": "crit-ux",
+          "score": 90
+        },
+        {
+          "criterionId": "crit-practical",
+          "score": 98
+        },
+        {
+          "criterionId": "crit-presentation",
+          "score": 92
+        }
+      ],
+      "feedback": "Outstanding architecture. The Glicko-2 pairwise engine combined with Z-Score normalization solves real judge calibration problems. Clean Docker compose setup with instant startup."
+    },
+    {
+      "id": "eval-1-2",
+      "judgeId": "judge-1",
+      "judgeName": "Dr. Sarah Chen",
+      "submissionId": "sub-2",
+      "scores": [
+        {
+          "criterionId": "crit-innov",
+          "score": 88
+        },
+        {
+          "criterionId": "crit-tech",
+          "score": 92
+        },
+        {
+          "criterionId": "crit-ux",
+          "score": 82
+        },
+        {
+          "criterionId": "crit-practical",
+          "score": 86
+        },
+        {
+          "criterionId": "crit-presentation",
+          "score": 85
+        }
+      ],
+      "feedback": "Strong AST parser and code inspection engine. Impressive integration with Ollama for local self-hosted LLM execution."
+    },
+    {
+      "id": "eval-1-4",
+      "judgeId": "judge-1",
+      "judgeName": "Dr. Sarah Chen",
+      "submissionId": "sub-4",
+      "scores": [
+        {
+          "criterionId": "crit-innov",
+          "score": 86
+        },
+        {
+          "criterionId": "crit-tech",
+          "score": 94
+        },
+        {
+          "criterionId": "crit-ux",
+          "score": 78
+        },
+        {
+          "criterionId": "crit-practical",
+          "score": 95
+        },
+        {
+          "criterionId": "crit-presentation",
+          "score": 82
+        }
+      ],
+      "feedback": "Exceptional resilience and minimal binary footprint. Excellent offline-first synchronization."
+    },
+    {
+      "id": "eval-2-1",
+      "judgeId": "judge-2",
+      "judgeName": "Alex Rivera",
+      "submissionId": "sub-1",
+      "scores": [
+        {
+          "criterionId": "crit-innov",
+          "score": 92
+        },
+        {
+          "criterionId": "crit-tech",
+          "score": 90
+        },
+        {
+          "criterionId": "crit-ux",
+          "score": 96
+        },
+        {
+          "criterionId": "crit-practical",
+          "score": 94
+        },
+        {
+          "criterionId": "crit-presentation",
+          "score": 95
+        }
+      ],
+      "feedback": "Superb UI styling! The dark obsidian and neon violet themes look extremely professional. Pairwise voting duel modal is smooth and responsive."
+    },
+    {
+      "id": "eval-2-3",
+      "judgeId": "judge-2",
+      "judgeName": "Alex Rivera",
+      "submissionId": "sub-3",
+      "scores": [
+        {
+          "criterionId": "crit-innov",
+          "score": 90
+        },
+        {
+          "criterionId": "crit-tech",
+          "score": 86
+        },
+        {
+          "criterionId": "crit-ux",
+          "score": 98
+        },
+        {
+          "criterionId": "crit-practical",
+          "score": 84
+        },
+        {
+          "criterionId": "crit-presentation",
+          "score": 96
+        }
+      ],
+      "feedback": "World-class visual aesthetics and micro-interactions. The submission studio live preview feels like a AAA creative tool."
+    },
+    {
+      "id": "eval-2-5",
+      "judgeId": "judge-2",
+      "judgeName": "Alex Rivera",
+      "submissionId": "sub-5",
+      "scores": [
+        {
+          "criterionId": "crit-innov",
+          "score": 85
+        },
+        {
+          "criterionId": "crit-tech",
+          "score": 88
+        },
+        {
+          "criterionId": "crit-ux",
+          "score": 80
+        },
+        {
+          "criterionId": "crit-practical",
+          "score": 88
+        },
+        {
+          "criterionId": "crit-presentation",
+          "score": 83
+        }
+      ],
+      "feedback": "Good UI clarity, though the cryptographic commit-reveal flow could benefit from additional visual status indicators."
+    },
+    {
+      "id": "eval-3-1",
+      "judgeId": "judge-3",
+      "judgeName": "Priya Sharma",
+      "submissionId": "sub-1",
+      "scores": [
+        {
+          "criterionId": "crit-innov",
+          "score": 94
+        },
+        {
+          "criterionId": "crit-tech",
+          "score": 95
+        },
+        {
+          "criterionId": "crit-ux",
+          "score": 92
+        },
+        {
+          "criterionId": "crit-practical",
+          "score": 96
+        },
+        {
+          "criterionId": "crit-presentation",
+          "score": 94
+        }
+      ],
+      "feedback": "Top tier self-hosting execution. One single docker-compose file brings up everything with persistent data volumes and healthchecks."
+    },
+    {
+      "id": "eval-3-4",
+      "judgeId": "judge-3",
+      "judgeName": "Priya Sharma",
+      "submissionId": "sub-4",
+      "scores": [
+        {
+          "criterionId": "crit-innov",
+          "score": 89
+        },
+        {
+          "criterionId": "crit-tech",
+          "score": 96
+        },
+        {
+          "criterionId": "crit-ux",
+          "score": 80
+        },
+        {
+          "criterionId": "crit-practical",
+          "score": 98
+        },
+        {
+          "criterionId": "crit-presentation",
+          "score": 88
+        }
+      ],
+      "feedback": "Truly impressive 35MB multi-stage Alpine build. Perfect for edge hackathons with spotty venue WiFi."
+    }
+  ],
+  "pairwiseDuels": [
+    {
+      "id": "duel-1",
+      "judgeId": "judge-1",
+      "judgeName": "Dr. Sarah Chen",
+      "subAId": "sub-1",
+      "subBId": "sub-2",
+      "winnerId": "sub-1",
+      "timestamp": "2026-09-27T10:03:21.097Z"
+    },
+    {
+      "id": "duel-2",
+      "judgeId": "judge-2",
+      "judgeName": "Alex Rivera",
+      "subAId": "sub-3",
+      "subBId": "sub-5",
+      "winnerId": "sub-3",
+      "timestamp": "2026-09-27T11:03:21.097Z"
+    },
+    {
+      "id": "duel-3",
+      "judgeId": "judge-3",
+      "judgeName": "Priya Sharma",
+      "subAId": "sub-1",
+      "subBId": "sub-4",
+      "winnerId": "sub-1",
+      "timestamp": "2026-09-27T12:03:21.097Z"
+    }
+  ],
+  "schedule": [
+    {
+      "id": "evt-1",
+      "day": 1,
+      "title": "Opening Ceremony & Dogfood 2026 Keynote",
+      "time": "Day 1 · 09:00 UTC",
+      "duration": "45 min",
+      "type": "KEYNOTE",
+      "speaker": "Elena Rostova & Marcus Vance",
+      "location": "Main Stage / Discord Live",
+      "description": "Official kickoff, reveal of problem spec, judging rubric deep-dive, and Docker environment baseline.",
+      "completed": true
+    },
+    {
+      "id": "evt-2",
+      "day": 1,
+      "title": "Team Matchmaking & Ideation Mixer",
+      "time": "Day 1 · 10:30 UTC",
+      "duration": "90 min",
+      "type": "SOCIAL",
+      "speaker": "Community Facilitators",
+      "location": "Discord Voice Lounge & Team Builder",
+      "description": "Form cross-functional squads, brainstorm architectural approaches, and claim your open roles.",
+      "completed": true
+    },
+    {
+      "id": "evt-3",
+      "day": 1,
+      "title": "Workshop: Building Self-Hostable Docker Runtimes",
+      "time": "Day 1 · 14:00 UTC",
+      "duration": "60 min",
+      "type": "WORKSHOP",
+      "speaker": "Priya Sharma (CloudNative Org)",
+      "location": "Workshop Room A",
+      "description": "Best practices for multi-arch Dockerfiles, zero-dependency persistence, and healthcheck orchestration.",
+      "completed": true
+    },
+    {
+      "id": "evt-4",
+      "day": 2,
+      "title": "Judging Math: Glicko-2 & Z-Score Normalization",
+      "time": "Day 2 · 11:00 UTC",
+      "duration": "60 min",
+      "type": "WORKSHOP",
+      "speaker": "Dr. Sarah Chen (KernelCorp)",
+      "location": "Workshop Room B",
+      "description": "How to implement pairwise Bradley-Terry duels and eliminate judge variance through mathematical normalization.",
+      "completed": true
+    },
+    {
+      "id": "evt-5",
+      "day": 2,
+      "title": "Midway Checkpoint & Live Mentor Office Hours",
+      "time": "Day 2 · 18:00 UTC",
+      "duration": "120 min",
+      "type": "MENTORING",
+      "speaker": "All Official Judges & Mentors",
+      "location": "Mentor Queue & Discord Desks",
+      "description": "Get 1-on-1 architecture feedback, Docker debugging help, and pitch polish before final sprint.",
+      "completed": true
+    },
+    {
+      "id": "evt-6",
+      "day": 3,
+      "title": "Soft Submission Deadline & Code Freeze",
+      "time": "Day 3 · 12:00 UTC",
+      "duration": "Milestone",
+      "type": "DEADLINE",
+      "speaker": "Organizers Ops",
+      "location": "Submission Studio",
+      "description": "Verify repository URLs, test Docker builds, and ensure 2-minute video pitch is uploaded.",
+      "completed": true
+    },
+    {
+      "id": "evt-7",
+      "day": 3,
+      "title": "Live Judging Matrix & Pairwise Duel Arena",
+      "time": "Day 3 · 14:00 UTC",
+      "duration": "180 min",
+      "type": "JUDGING",
+      "speaker": "Verified Judges & Community",
+      "location": "Judging Studio & Showdown Arena",
+      "description": "Judges review code repos, test live containers, and execute head-to-head pairwise showdowns.",
+      "completed": false,
+      "active": true
+    },
+    {
+      "id": "evt-8",
+      "day": 3,
+      "title": "Closing Ceremony & $45,000 Winners Unveil",
+      "time": "Day 3 · 18:00 UTC",
+      "duration": "60 min",
+      "type": "KEYNOTE",
+      "speaker": "Elena Rostova & Guest Judges",
+      "location": "Main Stage / Live Broadcast",
+      "description": "Announcing Grand Prix Champions, Track Winners, Community Choice, and open-source roadmap.",
+      "completed": false
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ann-1",
+      "title": "⚡ Judging Matrix is LIVE! Dual-Engine scoring active",
+      "content": "All 4 verified judges are now reviewing submissions across all 4 tracks. Pairwise showdowns are active with Glicko-2 ratings updating in real-time.",
+      "tag": "LIVE OPS",
+      "severity": "URGENT",
+      "timestamp": "2026-09-27T10:03:21.096Z",
+      "author": "Marcus Vance (Ops Lead)"
+    },
+    {
+      "id": "ann-2",
+      "title": "🎁 CloudNative Foundation adds $7,000 Edge Deployability Bounty",
+      "content": "Projects with under-50MB multi-stage Alpine Dockerfiles and zero external cloud dependencies are automatically eligible!",
+      "tag": "BOUNTY",
+      "severity": "BOUNTY",
+      "timestamp": "2026-09-27T01:03:21.096Z",
+      "author": "Elena Rostova"
+    },
+    {
+      "id": "ann-3",
+      "title": "🛠️ Mentor Office Hours Queue open for Docker & Architecture debugging",
+      "content": "Jump into the Mentor Desk tab or Discord voice channel #mentor-help if you encounter container restart issues or SQLite concurrency.",
+      "tag": "MENTORING",
+      "severity": "INFO",
+      "timestamp": "2026-09-26T17:03:21.096Z",
+      "author": "Dr. Sarah Chen"
+    }
+  ],
+  "mentorTickets": [
+    {
+      "id": "ticket-1",
+      "teamName": "HyperSync Dynamics",
+      "topic": "Optimizing Glicko-2 Rating Volatility in Real-Time SSE Streams",
+      "category": "Algorithm & Math",
+      "status": "RESOLVED",
+      "claimedBy": "Dr. Sarah Chen",
+      "createdAt": "2026-09-26T19:03:21.096Z",
+      "resolvedAt": "2026-09-26T21:03:21.096Z",
+      "notes": "Recommended using fixed decay factor to prevent rating oscillations during low sample sizes."
+    },
+    {
+      "id": "ticket-2",
+      "teamName": "Aegis AI Labs",
+      "topic": "Dockerizing Local Ollama LLM Container for One-Click Self-Host",
+      "category": "Docker & Deployment",
+      "status": "RESOLVED",
+      "claimedBy": "Priya Sharma",
+      "createdAt": "2026-09-27T03:03:21.096Z",
+      "resolvedAt": "2026-09-27T04:03:21.096Z",
+      "notes": "Provided multi-stage Docker compose volume binding for model weights."
+    },
+    {
+      "id": "ticket-3",
+      "teamName": "NeuroFlow Studio",
+      "topic": "Accessibility & Screen Reader Review for Cyberpunk Theme",
+      "category": "UI/UX & Design",
+      "status": "OPEN",
+      "claimedBy": null,
+      "createdAt": "2026-09-27T11:03:21.096Z",
+      "notes": "Need guidance on WCAG contrast for neon pink on dark obsidian surfaces."
+    }
+  ],
+  "hackerSeekers": [
+    {
+      "id": "seeker-1",
+      "name": "Kai Takahashi",
+      "role": "Fullstack & Docker Specialist",
+      "skills": [
+        "React",
+        "Node.js",
+        "Docker",
+        "SQLite",
+        "SSE Streams"
+      ],
+      "timezone": "UTC+9 (Tokyo)",
+      "github": "kaitakahashi-dev",
+      "bio": "Passionate about zero-config self-hosted tooling and low-latency realtime systems. Looking for an AI or Core platform team.",
+      "status": "LOOKING"
+    },
+    {
+      "id": "seeker-2",
+      "name": "Amara Okonjo",
+      "role": "UI/UX Product Designer",
+      "skills": [
+        "Figma",
+        "Design Systems",
+        "CSS Micro-animations",
+        "Accessibility"
+      ],
+      "timezone": "UTC+1 (Lagos)",
+      "github": "amara-designs",
+      "bio": "Specializing in brutalist cyber aesthetics and accessible dashboards. Ready to elevate your hackathon submission frontend!",
+      "status": "LOOKING"
+    },
+    {
+      "id": "seeker-3",
+      "name": "Vikram Mehta",
+      "role": "Backend & Distributed Systems",
+      "skills": [
+        "Go",
+        "Rust",
+        "PostgreSQL",
+        "Glicko-2 Math",
+        "WebSockets"
+      ],
+      "timezone": "UTC+5:30 (Mumbai)",
+      "github": "vikram-systems",
+      "bio": "Built scalable tournament ranking engines. Looking to implement mathematically sound judging matrices.",
+      "status": "LOOKING"
+    },
+    {
+      "id": "seeker-4",
+      "name": "Zoe Kravitz-Miller",
+      "role": "ML & Code Analysis Engineer",
+      "skills": [
+        "Python",
+        "FastAPI",
+        "TreeSitter",
+        "Ollama",
+        "Embeddings"
+      ],
+      "timezone": "UTC-5 (New York)",
+      "github": "zoekm-ai",
+      "bio": "Building smart judge assistants that parse git commits and detect codebase uniqueness.",
+      "status": "LOOKING"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-1",
+      "category": "General",
+      "question": "What is Dogfood 2026?",
+      "answer": "Dogfood 2026 is a 72-hour global hackathon where builders create the ultimate open-source, self-hostable hackathon submission and judging platform. The winning project will literally become the platform used for future global hackathons."
+    },
+    {
+      "id": "faq-2",
+      "category": "Self-Hosting & Tech",
+      "question": "What are the self-hosting requirements?",
+      "answer": "Your project must be easily runnable via Docker / Docker Compose in under 30 seconds with persistent data storage (e.g. SQLite WAL or PostgreSQL) and zero mandatory third-party vendor lock-in. Healthcheck endpoints (/health) are strongly recommended."
+    },
+    {
+      "id": "faq-3",
+      "category": "Judging & Scoring",
+      "question": "How does the Dual-Engine scoring matrix work?",
+      "answer": "Scores are computed using two scientifically backed methods: 70% Z-Score Normalized Rubric Evaluations (which eliminates variance between harsh and lenient reviewers) and 30% Head-to-Head Pairwise Elo Duels (based on Glicko-2 rating convergence)."
+    },
+    {
+      "id": "faq-4",
+      "category": "Prizes & Tracks",
+      "question": "Can our team submit to multiple tracks?",
+      "answer": "Every submission selects one Primary Track for the category prizes, but all projects are automatically eligible for the $20,000 Grand Prix and Community Choice Awards."
+    },
+    {
+      "id": "faq-5",
+      "category": "Submissions & Repo",
+      "question": "What must be included in our final submission?",
+      "answer": "1. A public GitHub/GitLab repository link with an open-source license. 2. Working Dockerfile or docker-compose.yml. 3. A 2-minute video pitch demonstration. 4. Clear README setup instructions."
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1",
+      "action": "HACKATHON_INITIALIZED",
+      "detail": "Dogfood 2026 Hackathon Engine initialized in Docker container.",
+      "timestamp": "2026-09-24T13:03:21.098Z"
+    },
+    {
+      "id": "log-2",
+      "action": "PHASE_TRANSITION",
+      "detail": "Transitioned from SUBMISSION to JUDGING stage.",
+      "timestamp": "2026-09-27T07:03:21.098Z"
+    }
+  ]
+}
